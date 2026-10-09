@@ -19,6 +19,7 @@ class App
          }
       }
 
+      //buka dan buat objek home 
       require_once "../app/controllers/" . $this->controller . ".php";
       $this->controller = new $this->controller;
 
@@ -39,6 +40,7 @@ class App
       call_user_func_array([$this->controller, $this->method], $this->params);
    }
 
+   //ambil url
    public function parseUrl()
    {
       if (isset($_GET['url'])) {
